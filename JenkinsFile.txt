@@ -3,12 +3,12 @@ pipeline{
 stages{
       stage('First stage'){
           steps{
-              echo 'fetching code from remote repo'
+              git branch: 'main', url: 'https://github.com/Sushmagowdaaa/maven.git'
                }
            }
      stage('Second stage'){
           steps{
-                echo 'This is build phase....'
+                build 'maven_job'
                 }
            }
      stage('Third stage'){
